@@ -1,0 +1,64 @@
+/* order-list.wxss */
+@import "../tpls/base.wxss";
+@import '../tpls/orders/orders';
+.active {
+  border-bottom: 2px solid #292929;
+}
+.item-title{
+    padding: 25rpx 0;
+    color: #999999;
+    text-align: center;
+    border-bottom: 1rpx solid #EDEDED;
+    font-size: 28rpx;
+    background-color: #fff;
+    position: relative;
+}
+.item-title image{
+    position: absolute;
+    transform: rotate(270deg);
+    height: 48rpx;
+    width: 48rpx;
+    right: 10rpx;
+}
+.item-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.locat-item{
+  font-size: 28rpx;
+  width: 25%;
+  text-align: center;
+  color: #7C7C7C;
+}
+.locat-item > view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.locat-item image{
+  margin: 20rpx auto 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.locat-item text{
+  line-height: 80rpx;
+}
+.locat-item > view .count{
+  font-size: 24rpx;
+  background-color: #292929;
+  color: white;
+  position: absolute;
+  right: 50rpx;
+  top: 10rpx;
+  height: 36rpx;
+  width: 36rpx;
+  line-height: 36rpx;
+  border-radius: 36rpx;
+  text-align: center;
+  overflow: visible;  
+}

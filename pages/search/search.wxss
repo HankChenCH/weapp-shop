@@ -1,0 +1,82 @@
+/* search.wxss */
+@import "../tpls/base.wxss";
+@import "../tpls/products/products-column-tpl.wxss";
+
+.search-container{
+  background-color: #fff;
+}
+
+.search{
+    background-color: #292929;
+    height: 80rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.search-img{
+    margin: auto 0 auto 30rpx;
+}
+
+.search input{
+    height: 55rpx;
+    width: 600rpx;
+    font-size: 28rpx;
+    margin: auto;
+    border: 1px solid #292929;
+    border-radius: 30px;
+    padding-left: 20rpx;
+    background-color: #fff;
+}
+
+.placeholder{
+    font-size: 14px;
+    color: #a1a1a1;
+    margin-left: 20rpx;
+}
+
+.search-keyword,.search-result{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #a1a1a1;
+}
+
+.search-keyword{
+  margin: 20rpx auto;
+}
+
+.search-result{
+  margin: 20rpx 0;
+}
+
+.search-keyword .search-history{
+  margin: 20rpx auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search-history-list{
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx auto 0;
+}
+
+.search-history-list .search-history-item{
+  padding: 5px 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  line-height: 16px;
+  margin: 0 10px;
+}
+
+.search-result .search-result-header{
+  text-align: center;
+}

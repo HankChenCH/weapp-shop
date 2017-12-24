@@ -1,0 +1,10 @@
+.container{
+  font-family: "Microsoft Yahei";
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+}
+
+.text-line{
+  text-decoration: line-through;
+}

@@ -1,0 +1,24 @@
+<template name="themeBanner">
+  <view class="theme">
+    <view class="theme-header">
+      <image src="{{theme.head_img.url}}" mode='widthFix'></image>
+    </view>
+    <view class='theme-main'>
+      <view class="category-main">
+        <block wx:for="{{theme.products}}">
+          <view class="category-goods-items" data-id="{{item.id}}" bindtap="onProductsItemTap">
+            <image src="{{item.main_img_url}}" mode="aspectFill"></image>
+            <view>{{item.name}}</view>
+            <view>￥{{item.price}}</view>
+          </view>
+        </block>
+        <view class="category-goods-items more">
+          <view class="rect" catchtap="onThemeTap" data-id="{{theme.id}}">
+            <text>更多</text>
+            <text>...</text>            
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,45 @@
+<!--home2.wxml-->
+<import src="../tpls/themeBanner/themeBanner" />
+<view class="container">
+
+  <view class="home-header">
+    <view class="logo-box">
+      <image class="logo" src="/images/icon/st.jpg" mode="aspectFit"></image>
+      <view class="search-box" bindtap="onSearchTap">
+        <view class="search-input">
+          <text>搜索商品</text>
+        </view>
+      </view>
+    </view>
+    <view class="nav-box">
+      <view class="menu">
+        <!--<view class="menu-item" bindtap="onThemeTap">
+          <image class="menu-icon" src="../../images/icon/theme.png"></image>
+          <text>主题</text>
+        </view>-->
+        <view class="menu-item" bindtap="onCategoryTap">
+          <image class="menu-icon" src="../../images/icon/category.png"></image>
+          <text>分类</text>
+        </view>
+        <!-- <view class="menu-item" bindtap="onThemeTap">
+          <image class="menu-icon" src="../../images/icon/recommendation.png"></image>
+          <text>店长推荐</text>
+        </view> -->
+        <view class="menu-item" bindtap="onOrderTap">
+          <image class="menu-icon" src="../../images/icon/order.png"></image>
+          <text>订单查询</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home-main">
+    <view class="home-main-header">精选主题</view>
+    <view class="home-main-product">
+      <block wx:for="{{essenceThemes}}" ws:key="{{key}}">
+        <template is="themeBanner" data="{{ theme: item }}"></template>
+      </block>
+    </view>
+  </view>
+
+</view>

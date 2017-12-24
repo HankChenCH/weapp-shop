@@ -1,0 +1,72 @@
+<view class="container my-container" hidden="{{!loadingHidden}}">
+  <view class="my-header">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <text class="name">{{userInfo.nickName}}</text>
+  </view>
+  <!--地址管理-->
+  <view class="my-address">
+    <block wx:if="{{addressInfo}}">
+      <view class="item-title" ontap="editAddress">
+        地址管理
+        <image src="../../images/icon/arrow@right.png"></image>
+      </view>
+      <view class="item-main">
+        <view class="section">
+          <input disabled name="name" placeholder="姓名" value="{{addressInfo.name}}" />
+        </view>
+        <view class="section">
+          <input disabled type="number" name="mobile" placeholder="手机号码" value="{{addressInfo.mobile}}" />
+        </view>
+        <view class="section">
+          <input disabled name="detail" placeholder="收货地址" value="{{addressInfo.totalDetail}}" />
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="add-new-address" ontap="editAddress">
+        <text class="icon">+</text>
+        <text>添加地址</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="my-order">
+    <view class="item-title">我的订单</view>
+    <view class="item-row">
+      <navigator class='locat-item' url="/pages/order-list/order-list?status=-1">
+        <view>
+          <image src="/images/icon/closed.png"></image>
+          <text>已关闭</text>
+        </view>
+      </navigator>
+      <navigator class='locat-item' url="/pages/order-list/order-list?status=1">
+        <view>
+          <image src="/images/icon/unpay.png"></image>
+          <view class="count" wx:if="{{unPayCount>0}}">{{unPayCount}}</view>
+          <text>待付款</text>
+        </view>
+      </navigator>
+      <navigator class='locat-item' url="/pages/order-list/order-list?status=2">
+        <view>
+          <image src="/images/icon/package.png"></image>
+          <view class="count" wx:if="{{unPackageCount>0}}">{{unPackageCount}}</view>
+          <text>待发货</text>
+        </view>
+      </navigator>
+      <navigator class='locat-item' url="/pages/order-list/order-list?status=3">
+        <view>
+          <image src="/images/icon/delivery.png"></image>
+          <view class="count" wx:if="{{deliveryCount>0}}">{{deliveryCount}}</view>
+          <text>已发货</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="about-us">
+    <view class="item-title" catchtap="handleAboutTap">关于探小店</view>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

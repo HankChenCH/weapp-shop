@@ -1,0 +1,31 @@
+<!--order-list.wxml-->
+<import src="../tpls/orders/orders" />
+
+<view class="my-order">
+  <view class="item-title">我的订单</view>
+  <view class="item-row">
+    <view class='locat-item' catchtap='handleChangeStatus' data-status="-1">
+      <view class="{{status == -1 ? 'active' : ''}}">
+        <text>已关闭</text>
+      </view>
+    </view>
+    <view class='locat-item' catchtap='handleChangeStatus' data-status="1">
+      <view class="{{status == 1 ? 'active' : ''}}">
+        <text>待付款</text>
+      </view>
+    </view>
+    <view class='locat-item' catchtap='handleChangeStatus' data-status="2">
+      <view class="{{status == 2 ? 'active' : ''}}">
+        <text>待发货</text>
+      </view>
+    </view>
+    <view class='locat-item' catchtap='handleChangeStatus' data-status="3">
+      <view class="{{status == 3 ? 'active' : ''}}">
+        <text>已发货</text>
+      </view>
+    </view>
+  </view>
+  <view class="item-main">
+    <template is="orders" data="{{ orderArr }}" />
+  </view>
+</view>

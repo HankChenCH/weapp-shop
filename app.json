@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/product/product",
+    "pages/theme/theme",
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/search/search",
+    "pages/order/order",
+    "pages/pay-result/pay-result",
+    "pages/order-list/order-list",
+    "pages/buy-now/buy-now"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#292929",
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "探小店",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#AB956D",
+    "color": "#989898",
+    "backgroundColor": "#F5F5F5",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/toolbar/home.png",
+        "selectedIconPath": "/images/toolbar/home@selected.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "/images/toolbar/cart.png",
+        "selectedIconPath": "/images/toolbar/cart@selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/toolbar/my.png",
+        "selectedIconPath": "/images/toolbar/my@selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  }
+}

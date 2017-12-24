@@ -1,0 +1,48 @@
+@import '../category/category-tpl.wxss';
+
+.theme-header{
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.theme-header image{
+  width: 750rpx;
+  height: 100%;
+}
+
+.theme-main{
+  margin-top: 10rpx;
+}
+
+.category-main{
+  display: block;
+  overflow-x: scroll;
+  margin-top: 50rpx;
+}
+
+.category-goods-items{
+  width: 250rpx;
+  float: left;
+}
+
+.more{
+  text-align: center;
+  height: 192rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more .rect{
+  border: 2px solid #292929;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

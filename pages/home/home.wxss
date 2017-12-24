@@ -1,0 +1,80 @@
+/* home2.wxss */
+@import "../tpls/base.wxss";
+@import "../tpls/themeBanner/themeBanner";
+@import "../tpls/products/products-column-tpl.wxss";
+
+.logo-box{
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.logo{
+  margin: 20px auto;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.search-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 10px 0;
+}
+
+.search-input{
+  margin: 0 auto;
+  background-color: #fff;
+  width: 680rpx;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+search-box text{
+  font-size: 14px;
+  color: #eee;
+}
+
+.menu{
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menu-item{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 300rpx;
+  text-align: center;
+}
+
+.menu-icon{
+  margin: 0 auto 10rpx;
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.home-main{
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.home-main-header{
+  display: flex;
+  height: 60rpx;
+  color: #292929;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
+}

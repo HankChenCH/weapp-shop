@@ -1,0 +1,38 @@
+<!--search.wxml-->
+<import src="../tpls/products/products-column-tpl" />
+<view class="container search-container">
+  <view class="search">
+    <icon type="search" class="search-img" size="20" color="#fff"></icon>
+    <input type="text" placeholder="商品名称" placeholder-class="placeholder" bindconfirm="onSubmitSearch" focus="true" auto-focus="true" value='{{onSearchWord}}'/>
+  </view>
+  <view wx:if="{{searchProducts.length === 0}}" class="search-keyword">
+    <view class="search-history search-history-user">
+      <text>-- 最近搜索 --</text>
+      <view class="search-history-list">
+        <block wx:for="{{userSearchHistory}}">
+          <view class="search-history-item" bindtap="onKeyWordTap" data-keyword="{{item}}">
+            {{item}}
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- <view class="search-history search-history-all">
+      <text>-- 大家都在搜 --</text>
+      <view class="search-history-list">
+        <block wx:for="{{allSearchHistory}}">
+          <view class="search-history-item" bindtap="onKeyWordTap" data-keyword="{{item.keyword}}">
+            {{item.keyword}}
+          </view>
+        </block>
+      </view>
+    </view> -->
+  </view>
+  <view wx:else class="search-result">
+    <view class="search-result-header">
+      <text>-- 搜索结果 --</text>
+    </view>
+    <view class="search-result-main">
+      <template is="products-column" data="{{products:searchProducts}}"></template>
+    </view>
+  </view>
+</view>

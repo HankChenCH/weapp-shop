@@ -1,0 +1,33 @@
+<template name="addressModal">
+  <view class='mask'>
+    <view class='address-modal-content'>
+      <view class='address-modal'>
+        <view class='modal-header'>
+          <text>地址信息</text>
+        </view>
+        <view class='modal-body'>
+          <block wx:if="{{addressInfo}}">
+            <view class="item-title" ontap="editAddress">
+              地址管理
+              <image src="../../images/icon/arrow@right.png"></image>
+            </view>
+            <view  class="item-main">
+                <view class="section">
+                  <input disabled name="name" placeholder="姓名" value="{{addressInfo.name}}" />
+                </view>
+                <view class="section">
+                  <input disabled type="number" name="mobile" placeholder="手机号码" value="{{addressInfo.mobile}}"/>
+                </view>
+                <view class="section">
+                  <input disabled name="detail" placeholder="收货地址" value="{{addressInfo.totalDetail}}"/>
+                </view>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="add-new-address" catchtap="editAddress"><text class="icon">+</text><text>添加地址</text></view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

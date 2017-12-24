@@ -1,0 +1,82 @@
+<!--pages/buy-now/buy-now.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../tpls/modal/addressModal.wxml" />
+<view class="container detail-container">
+
+  <view class="detail-header-box">
+
+    <view class="fixed-btns-box">
+      <view class="fixed-cart">
+        <button open-type="contact" class='custom-service'>
+          <image src='../../images/icon/custom-service.png'></image>
+        </button>
+      </view>
+    </view>
+
+    <view class="detail-topic-img">
+      <image src="{{product.main_img_url}}" mode="aspectFit"></image>
+    </view>
+
+    <view class="cart-box">
+      <block wx:if="{{canBuy}}">
+        <view class="product-counts">
+          <picker class="{{product.stock==0?'disabled':''}}" range="{{countArray}}" bindchange="onPickerChange">
+            <view>
+              <text class="counts-tips">数量</text>
+              <text class="counts-data">{{productCount}}</text>
+              <image class="counts-icon" src="../../images/icon/arrow@down.png"></image>
+            </view>
+          </picker>
+        </view>
+        <view class="middle-border"></view>
+        <view class="add-cart-btn" bindtap="onBuyNow">
+          <text>立即抢购</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="not-buy"><text>{{buyMsg}}</text></view>
+      </block>
+    </view>
+    <view wx:if="{{canBuy}}" class="can-buy">{{buyMsg}}</view>
+
+    <view class="basic-info-box">
+      <view class="name">{{product.name}}</view>
+      <view class="price">￥{{buyNowData.price}}</view>
+      <view class="stock">库存 余{{buyNowData.stock}}件</view>      
+    </view>
+
+  </view>
+
+  <view class="detail-bottom-box">
+    <view class="tabs-box">
+      <block wx:for="{{tabs}}">
+        <view class="tabs-item {{currentTabsIndex==index?'selected':''}}" bindtap="onTabsItemTap" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+    <view class="product-detail-box">
+
+      <view class="product-detail-imgs" hidden="{{currentTabsIndex!=0}}">
+        <template is="wxParse" data="{{wxParseData:rules.nodes}}" />
+      </view>
+
+      <view class="product-detail-imgs" hidden="{{currentTabsIndex!=1}}">
+        <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+      </view>
+
+      <view class="product-detail-properties" hidden="{{currentTabsIndex!=2}}">
+        <block wx:for="{{product.properties}}">
+          <view class="properties-item">
+            <view class="properties-name">{{item.name}}</view>
+            <view class="properties-detail">{{item.detail}}</view>
+          </view>
+        </block>
+      </view>
+
+    </view>
+  </view>
+
+  <block wx:if="{{modalVisible}}">
+    <template is="addressModal" data="{{ addressInfo }}"/>
+  </block>
+
+</view>
